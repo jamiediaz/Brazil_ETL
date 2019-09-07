@@ -1,4 +1,4 @@
-# Brazil_ETL
+# Brazilian Amazon Rain Forest Fires and Economy correlation (Brazil_ETL)
 ![](images/fire.jpg)
 During the summer of 2019 several fires were reported in the Amazon, as reported by BBC news in the link below:
 
@@ -87,6 +87,8 @@ All the Pandas CSV files were uploaded in the Postgress database as shown below:
 
 ### PostGres SQL database
 Each team member connected to the GitHub project and PostGres database. Our database with all the tables, HDF5 and CSV, is shown on the pictures below:
+
+
 ![](images/postgress_db_1.png)
 ![](images/postgress_db_2.png)
 
