@@ -66,7 +66,7 @@ The table we need resides in C under each month of the year.
 We will extract this data and put it to a dataframe.
 We then filter the data frame from column 444 to 519 and from row 352 to 399.
 The table corresponds to the lat, long coordinates for the rectangular area that
-is roughly the area of the Amazon Rainforest.
+is roughly the area of the Amazon Rainforest. A mapbox. 
 
 Coordinates
 NW: 1.819447, -68.950113
