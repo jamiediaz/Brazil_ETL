@@ -1,6 +1,15 @@
 # Brazil_ETL
+![](images/fire.jpg)
+During the summer of 2019 several fires were reported in the Amazon, as reported by BBC news in the link below:
 
-We will attempt to find a correlation between government expenditures and forest fires.  
+https://www.bbc.com/news/world-latin-america-49433767
+
+International governments considered this series of fires catastrophic (see reference here: https://www.bbc.com/news/world-latin-america-49443389), some countries offered help to Brazil, where most of the Amazon rain forest resides, to prevent more damages to what is considered the "lungs of the world"
+
+We will attempt to find a correlation between:
+ - Forest fires in Amazon
+ - Brazilian government expenditures
+ - Soy bean and corn production, demand and global prices
 
 Here we are extracting monthly emissions data for the area of the Amazon Rainforest.
 
@@ -33,6 +42,22 @@ To parse through it, it's as simple as the following command each layer. You wil
 
 ![](images/command.png)
 
+### Kaggle CSV files
+Brazilian government expenses, including all the ones related to agriculture or land were obtained from https://www.kaggle.com/vicentegsantos/brazil-gov-expenses
+the original file (Brazil_Gov_Exp_All - Formated.csv) was not in CSV format
+![](images/brazil_gov_format_notcsv.png)
+
+so it was converted to Brazil.csv in Excel
+![](images/brazil_gov_format_csvOK.png) brazil_gov_format_csvOK
+
+Corn and Soy bean production/consupmtion totals per year, including global and brazilian numbers obtained from https://www.kaggle.com/ainslie/usda-wasde-monthly-corn-soybean-projections
+Saved all the soy files to "soy" subfolder, and all the corn files to "corn" subfolder
+![](images/raw_soy_bean_files.png)
+
+With the python glob library, we used the script shown below to combine all the files (per year) into a single for all the years
+![](images/combined_soy_bean_files.png)
+
+
 ### Dataset 
 The table we need resides in C under each month of the year.
 We will extract this data and put it to a dataframe.
@@ -46,10 +71,31 @@ NE: 1.819447, -50.397135
 SE: -9.666005, -50.397135
 SW: -9.666005, -68.950113
 
-### HDF to Pandas
+### HDF to PostGres SQL database
 
 After finding and extracting the data, we copied each table to a Pandas dataframe and sent them to PostGres. 
 
 We did this for every month for every year.  
 
 ![](images/parse.png)
+
+### Pandas'CSV files to PostGres SQL database
+
+All the Pandas CSV files were uploaded in the Postgress database as shown below:
+
+![](images/csv_to_postgress.png)
+
+### PostGres SQL database
+Each team member connected to the GitHub project and PostGres database. Our database with all the tables, HDF5 and CSV, is shown on the pictures below:
+![](images/postgress_db_1.png)
+![](images/postgress_db_2.png)
+
+### Appendix
+
+Some additional data sources were also explored and added in the Jupyter notebook, that will help the analysis of the Amazon fires in future work, including:
+
+- Corn price totals per month obtained, from https://www.kaggle.com/ainslie/usda-wasde-monthly-corn-soybean-projections. The original file was not in CSV format, so it was converted to csv in Excel
+- Soy bean price totals per monthobtained, from https://www.kaggle.com/ainslie/usda-wasde-monthly-corn-soybean-projections. The original file was not in CSV format, so it was converted to csv in Excel
+- Forest Fire Count per State in Brazil, obtained from https://www.kaggle.com/gustavomodelli/forest-fires-in-brazil
+
+![](images/appendix.png)
