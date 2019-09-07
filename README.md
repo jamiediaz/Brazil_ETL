@@ -87,6 +87,8 @@ All the Pandas CSV files were uploaded in the Postgress database as shown below:
 
 ### PostGres SQL database
 Each team member connected to the GitHub project and PostGres database. Our database with all the tables, HDF5 and CSV, is shown on the pictures below:
+
+
 ![](images/postgress_db_1.png)
 ![](images/postgress_db_2.png)
 
