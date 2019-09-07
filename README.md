@@ -101,3 +101,7 @@ Some additional data sources were also explored and added in the Jupyter noteboo
 - Forest Fire Count per State in Brazil, obtained from https://www.kaggle.com/gustavomodelli/forest-fires-in-brazil
 
 ![](images/appendix.png)
+
+#### Emission Totals
+An emission yearly total was also created for easier analysis.  These totals are grams of carbon per square meter (g C /m-2).
+![](images/totals.png)
