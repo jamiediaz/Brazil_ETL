@@ -21,8 +21,7 @@ for soybean and corn is directly linked to it.
 
 ### Data files
 We will be using soybean and corn data gathered from Kaggle.com and carbon emissions data gathered from
-the Global Fire Emissions Database (GFED). Data from GFED are all stored in HDF5 files and
-requires some drilling down to get to the tables we need -- the monthly carbon emissions table.
+the Global Fire Emissions Database (GFED). Since up to date burn area data hasn't been compiled yet on GFED (stops at 2016), we had use emissions data. Data from GFED are all stored in HDF5 files and requires some drilling down to get to the tables we need -- the monthly carbon emissions table.
 
 ### HDF5 files
 
