@@ -49,7 +49,7 @@ the original file (Brazil_Gov_Exp_All - Formated.csv) was not in CSV format
 so it was converted to Brazil.csv in Excel
 ![](images/brazil_gov_format_csvOK.png) brazil_gov_format_csvOK
 
-Corn and Soy bean production/consupmtion totals per year, including global and brazilian numbers obtained from https://www.kaggle.com/ainslie/usda-wasde-monthly-corn-soybean-projections
+According to National Geographic (https://www.nationalgeographic.com/environment/2019/09/ancient-humans-burned-amazon-fires-today-entirely-different/), "The Amazon did not evolve to burn, but for centuries, fire has been used to clear space in the rainforest for agricultural crops, from soybeans to palm to cattle". Other sources like, the BBC articles mentioned above also mentioned this. To analyze this, Corn and Soy bean production/consupmtion totals per year, including global and brazilian numbers obtained from https://www.kaggle.com/ainslie/usda-wasde-monthly-corn-soybean-projections
 Saved all the soy files to "soy" subfolder, and all the corn files to "corn" subfolder
 ![](images/raw_soy_bean_files.png)
 
