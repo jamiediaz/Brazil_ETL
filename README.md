@@ -35,16 +35,6 @@ HDF is completely portable file format with no limit on the number or size of da
 
 Each cell on the table corresponds to the latitude and longitude coordinates.  Each cell data contains a measurement for that coordinate on the map.  i.e. a percentage of how much area burned for that particular coordinate.  
 
-### H5PY Library
-
-We imported the H5PY library which allowed us to use python to parse through the database.  
-
-![](images/h5py.png)
-
-To parse through it, it's as simple as the following command each layer. You will need to copy it to a variable and use .File() to keep going into the database. 
-
-![](images/command.png)
-
 ### Dataset 
 The table we need resides in C under each month of the year.
 We will extract this data and put it to a dataframe.
@@ -57,6 +47,16 @@ NW: 1.819447, -68.950113
 NE: 1.819447, -50.397135
 SE: -9.666005, -50.397135
 SW: -9.666005, -68.950113
+
+### H5PY Library
+
+We imported the H5PY library which allowed us to use python to parse through the database.  
+
+![](images/h5py.png)
+
+To parse through it, it's as simple as the following command each layer. You will need to copy it to a variable and use .File() to keep going into the database. 
+
+![](images/command.png)
 
 ### Kaggle CSV files
 Brazilian government expenses, including all the ones related to agriculture or land were obtained from https://www.kaggle.com/vicentegsantos/brazil-gov-expenses
