@@ -23,7 +23,7 @@ for soybean and corn is directly linked to it.
 
 The latest burn area data that GFED has compiled is 2016.  Since our data range spans up to 2018, we had to use emissions data, which GFED had up to date data on. 
 
-### Data files
+## Data files
 We will be using soybean and corn data gathered from Kaggle.com and carbon emissions data gathered from
 the Global Fire Emissions Database (GFED). Data from GFED are all stored in HDF5 files and requires some drilling down to get to the tables we need -- the monthly carbon emissions table.
 
@@ -45,6 +45,19 @@ To parse through it, it's as simple as the following command each layer. You wil
 
 ![](images/command.png)
 
+### Dataset 
+The table we need resides in C under each month of the year.
+We will extract this data and put it to a dataframe.
+We then filter the data frame from column 444 to 519 and from row 352 to 399.
+The table corresponds to the lat, long coordinates for the rectangular area that
+is roughly the area of the Amazon Rainforest. A mapbox. 
+
+Coordinates
+NW: 1.819447, -68.950113
+NE: 1.819447, -50.397135
+SE: -9.666005, -50.397135
+SW: -9.666005, -68.950113
+
 ### Kaggle CSV files
 Brazilian government expenses, including all the ones related to agriculture or land were obtained from https://www.kaggle.com/vicentegsantos/brazil-gov-expenses
 the original file (Brazil_Gov_Exp_All - Formated.csv) was not in CSV format
@@ -61,20 +74,7 @@ With the python glob library, we used the script shown below to combine all the 
 ![](images/combined_soy_bean_files.png)
 
 
-### Dataset 
-The table we need resides in C under each month of the year.
-We will extract this data and put it to a dataframe.
-We then filter the data frame from column 444 to 519 and from row 352 to 399.
-The table corresponds to the lat, long coordinates for the rectangular area that
-is roughly the area of the Amazon Rainforest. A mapbox. 
-
-Coordinates
-NW: 1.819447, -68.950113
-NE: 1.819447, -50.397135
-SE: -9.666005, -50.397135
-SW: -9.666005, -68.950113
-
-### HDF to PostGres SQL database
+## HDF to PostGres SQL database
 
 After finding and extracting the data, we copied each table to a Pandas dataframe and sent them to PostGres. 
 
@@ -82,20 +82,20 @@ We did this for every month for every year.
 
 ![](images/parse.png)
 
-### Pandas'CSV files to PostGres SQL database
+## Pandas'CSV files to PostGres SQL database
 
 All the Pandas CSV files were uploaded in the Postgress database as shown below:
 
 ![](images/csv_to_postgress.png)
 
-### PostGres SQL database
+## PostGres SQL database
 Each team member connected to the GitHub project and PostGres database. Our database with all the tables, HDF5 and CSV, is shown on the pictures below:
 
 
 ![](images/postgress_db_1.png)
 ![](images/postgress_db_2.png)
 
-### Appendix
+## Appendix
 
 Some additional data sources were also explored and added in the Jupyter notebook, that will help the analysis of the Amazon fires in future work, including:
 
@@ -105,6 +105,6 @@ Some additional data sources were also explored and added in the Jupyter noteboo
 
 ![](images/appendix.png)
 
-#### Emission Totals
+### Emission Totals
 An emission yearly total was also created for easier analysis.  These totals are grams of carbon per square meter (g C /m-2).
 ![](images/totals.png)
